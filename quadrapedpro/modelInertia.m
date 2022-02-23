@@ -1,4 +1,4 @@
-bodymass = 1;
+bodymass = 40;
 abadmass = 1;
 hipmass = 1;
 kneemass = 1;

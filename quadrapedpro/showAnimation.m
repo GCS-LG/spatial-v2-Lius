@@ -4,9 +4,10 @@ FL_abad = bodybase + withLegSigns(abadLocation, 1);
 HR_abad = bodybase + withLegSigns(abadLocation, 2);
 HL_abad = bodybase + withLegSigns(abadLocation, 3);
 
-
-plot3( [FR_abad(1), HL_abad(1) ],  [ FR_abad(2), HL_abad(2) ], [ FR_abad(3), HL_abad(3) ] , 'k'); hold on;
-plot3( [FL_abad(1), HR_abad(1)], [FL_abad(2), HR_abad(2)], [FL_abad(3), HR_abad(3)], 'k'); hold on;
+figure(1);
+% clf;
+h1 = plot3( [FR_abad(1), HL_abad(1) ],  [ FR_abad(2), HL_abad(2) ], [ FR_abad(3), HL_abad(3) ] , 'k');hold on;
+h2 = plot3( [FL_abad(1), HR_abad(1)], [FL_abad(2), HR_abad(2)], [FL_abad(3), HR_abad(3)], 'k');% hold on;
 
 fr_q = state.q(1:3);
 fl_q = state.q(4:6);
@@ -35,18 +36,18 @@ HL_hip_inW    = hl_p(1, 1:3);
 HL_knee_inW = hl_p(2, 1:3);
 HL_foot_inW  = hl_p(3, 1:3);
 
-plot3( [FR_abad(1), FR_hip_inW(1) ],  [ FR_abad(2), FR_hip_inW(2) ], [ FR_abad(3), FR_hip_inW(3) ] , 'k'); hold on;
-plot3( [FR_hip_inW(1), FR_knee_inW(1) ],  [ FR_hip_inW(2), FR_knee_inW(2) ], [ FR_hip_inW(3), FR_knee_inW(3) ] , 'k'); hold on;
-plot3( [FR_knee_inW(1), FR_foot_inW(1) ],  [ FR_knee_inW(2), FR_foot_inW(2) ], [ FR_knee_inW(3), FR_foot_inW(3) ] , 'k'); hold on;
+h3 = plot3( [FR_abad(1), FR_hip_inW(1) ],  [ FR_abad(2), FR_hip_inW(2) ], [ FR_abad(3), FR_hip_inW(3) ] , 'k'); %hold on;
+h4 = plot3( [FR_hip_inW(1), FR_knee_inW(1) ],  [ FR_hip_inW(2), FR_knee_inW(2) ], [ FR_hip_inW(3), FR_knee_inW(3) ] , 'k'); %hold on;
+h5 = plot3( [FR_knee_inW(1), FR_foot_inW(1) ],  [ FR_knee_inW(2), FR_foot_inW(2) ], [ FR_knee_inW(3), FR_foot_inW(3) ] , 'k'); %hold on;
 
-plot3( [FL_abad(1), FL_hip_inW(1) ],  [ FL_abad(2), FL_hip_inW(2) ], [ FL_abad(3), FL_hip_inW(3) ] , 'k'); hold on;
-plot3( [FL_hip_inW(1), FL_knee_inW(1) ],  [ FL_hip_inW(2), FL_knee_inW(2) ], [ FL_hip_inW(3), FL_knee_inW(3) ] , 'k'); hold on;
-plot3( [FL_knee_inW(1), FL_foot_inW(1) ],  [ FL_knee_inW(2), FL_foot_inW(2) ], [ FL_knee_inW(3), FL_foot_inW(3) ] , 'k'); hold on;
+h6 = plot3( [FL_abad(1), FL_hip_inW(1) ],  [ FL_abad(2), FL_hip_inW(2) ], [ FL_abad(3), FL_hip_inW(3) ] , 'k'); %hold on;
+h7 = plot3( [FL_hip_inW(1), FL_knee_inW(1) ],  [ FL_hip_inW(2), FL_knee_inW(2) ], [ FL_hip_inW(3), FL_knee_inW(3) ] , 'k'); %hold on;
+h8 = plot3( [FL_knee_inW(1), FL_foot_inW(1) ],  [ FL_knee_inW(2), FL_foot_inW(2) ], [ FL_knee_inW(3), FL_foot_inW(3) ] , 'k'); %hold on;
 
-plot3( [HR_abad(1), HR_hip_inW(1) ],  [ HR_abad(2), HR_hip_inW(2) ], [ HR_abad(3), HR_hip_inW(3) ] , 'k'); hold on;
-plot3( [HR_hip_inW(1), HR_knee_inW(1) ],  [ HR_hip_inW(2), HR_knee_inW(2) ], [ HR_hip_inW(3), HR_knee_inW(3) ] , 'k'); hold on;
-plot3( [HR_knee_inW(1), HR_foot_inW(1) ],  [ HR_knee_inW(2), HR_foot_inW(2) ], [ HR_knee_inW(3), HR_foot_inW(3) ] , 'k'); hold on;
+h9 = plot3( [HR_abad(1), HR_hip_inW(1) ],  [ HR_abad(2), HR_hip_inW(2) ], [ HR_abad(3), HR_hip_inW(3) ] , 'k'); %hold on;
+h10 = plot3( [HR_hip_inW(1), HR_knee_inW(1) ],  [ HR_hip_inW(2), HR_knee_inW(2) ], [ HR_hip_inW(3), HR_knee_inW(3) ] , 'k');% hold on;
+h11 = plot3( [HR_knee_inW(1), HR_foot_inW(1) ],  [ HR_knee_inW(2), HR_foot_inW(2) ], [ HR_knee_inW(3), HR_foot_inW(3) ] , 'k'); %hold on;
 
-plot3( [HL_abad(1), HL_hip_inW(1) ],  [ HL_abad(2), HL_hip_inW(2) ], [ HL_abad(3), HL_hip_inW(3) ] , 'k'); hold on;
-plot3( [HL_hip_inW(1), HL_knee_inW(1) ],  [ HL_hip_inW(2), HL_knee_inW(2) ], [ HL_hip_inW(3), HL_knee_inW(3) ] , 'k'); hold on;
-plot3( [HL_knee_inW(1), HL_foot_inW(1) ],  [ HL_knee_inW(2), HL_foot_inW(2) ], [ HL_knee_inW(3), HL_foot_inW(3) ] , 'k'); hold on;
+h12 = plot3( [HL_abad(1), HL_hip_inW(1) ],  [ HL_abad(2), HL_hip_inW(2) ], [ HL_abad(3), HL_hip_inW(3) ] , 'k'); %hold on;
+h13 = plot3( [HL_hip_inW(1), HL_knee_inW(1) ],  [ HL_hip_inW(2), HL_knee_inW(2) ], [ HL_hip_inW(3), HL_knee_inW(3) ] , 'k');% hold on;
+h14 = plot3( [HL_knee_inW(1), HL_foot_inW(1) ],  [ HL_knee_inW(2), HL_foot_inW(2) ], [ HL_knee_inW(3), HL_foot_inW(3) ] , 'k'); %hold on;
