@@ -90,18 +90,36 @@ else
     P = [Hip_inW(1:3)';  Knee_inW(1:3)';  Foot_inW(1:3)'];
     J = zeros(3,3);
     sideSign = [1, -1, 1, -1];
+%     J(1, 1) = 0;
+%     J(1, 2) = - k_L*c23 - h_L*c2;
+%     J(1, 3) = -k_L*c23;
+%     J(2, 1) = k_L*(c1*c2*c3 - c1*s2*s3) -  sideSign(leg+1) *a_L*s1 + h_L*c1*c2;
+%     J(2, 2) = -s1*(k_L*s23 + h_L*s2);
+%     J(2, 3) = -k_L*s23*s1;
+%     J(3, 1) =  sideSign(leg+1) *a_L*c1 - k_L*(s1*s2*s3 - c2*c3*s1) + h_L*c2*s1;
+%     J(3, 2) = c1*(k_L*s23 + h_L*s2);
+%     J(3, 3) = k_L*s23*c1;
+    
     J(1, 1) = 0;
-    J(1, 2) = - k_L*c23 - h_L*c2;
-    J(1, 3) = -k_L*c23;
-    J(2, 1) = k_L*(c1*c2*c3 - c1*s2*s3) -  sideSign(leg+1) *a_L*s1 + h_L*c1*c2;
+    J(1, 2) =  k_L*c23 + h_L*c2;
+    J(1, 3) = k_L*c23;
+    J(2, 1) = k_L * c1 * c23 + h_L * c1 * c2 - a_L * sideSign(leg+1) * s1;
     J(2, 2) = -s1*(k_L*s23 + h_L*s2);
     J(2, 3) = -k_L*s23*s1;
-    J(3, 1) =  sideSign(leg+1) *a_L*c1 - k_L*(s1*s2*s3 - c2*c3*s1) + h_L*c2*s1;
+    J(3, 1) =  k_L * s1 * c23 + h_L * c2 * s1 + a_L * sideSign(leg+1) * c1;
     J(3, 2) = c1*(k_L*s23 + h_L*s2);
     J(3, 3) = k_L*s23*c1;
 end
 
 end
-
-    
+% 
+%         J->operator()(0, 0) = 0;
+%     J->operator()(0, 1) = l3 * c23 + l2 * c2;
+%     J->operator()(0, 2) = l3 * c23;
+%     J->operator()(1, 0) = l3 * c1 * c23 + l2 * c1 * c2 - (l1 + l4) * sideSign * s1;
+%     J->operator()(1, 1) = -l3 * s1 * s23 - l2 * s1 * s2;
+%     J->operator()(1, 2) = -l3 * s1 * s23;
+%     J->operator()(2, 0) = l3 * s1 * c23 + l2 * c2 * s1 + (l1 + l4) * sideSign * c1;
+%     J->operator()(2, 1) = l3 * c1 * s23 + l2 * c1 * s2;
+%     J->operator()(2, 2) = l3 * c1 * s23;
     
