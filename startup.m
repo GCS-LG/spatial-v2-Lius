@@ -18,4 +18,4 @@
 %     startup.m in that directory, then simply add the (edited) line
 %     below to that file.
 
-addpath( genpath( 'E:\LS_project\Roy featherstone matlab code\spatial_v2' ) );
+addpath( genpath( 'E:\LS_project\Roy featherstone matlab code\spatial-v2-Lius' ) );

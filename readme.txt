@@ -1,3 +1,8 @@
+Learn spatial v2 and use it to build model
+we add code in quadrapedpro folder
+1 run startup.m to add path
+2 cd quadrapedpro and run main.m 
+
 Legal Notices
 
 This program is Spatial_v2: a package of spatial-vector and
